@@ -8,38 +8,36 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="30" />
-                <RowDefinition Height="30" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            <WrapPanel Grid.Row="0">
-                <TextBlock Width="60" Height="30" Margin="20, 0" FontSize="18"
+            <StackPanel>
+                <WrapPanel>
+                    <TextBlock Width="80" Height="30" Margin="20, 0" FontSize="18"
                            TextAlignment="Center"
-                           Text="신장:"></TextBlock>
-                <TextBox Width="100" Height="30" x:Name="height" FontSize="18" Text="cm" TextAlignment="Right"/>
+                           Text="신장:(cm)"></TextBlock>
+                    <TextBox Width="100" Height="30" x:Name="height" FontSize="18" TextAlignment="Right"/>
 
-                <TextBlock Width="60" Height="30" Margin="20, 0" FontSize="18"
+                    <TextBlock Width="80" Height="30" Margin="20, 0" FontSize="18"
                            TextAlignment="Center" 
                            VerticalAlignment="Center"
-                           Text="체중:"></TextBlock>
-                <TextBox Width="100" Height="30" x:Name="weight" FontSize="18" Text="kg" TextAlignment="Right"/>
+                           Text="체중:(kg)"></TextBlock>
+                    <TextBox Width="100" Height="30" x:Name="weight" FontSize="18" TextAlignment="Right"/>
 
-                <Button Width="60" Height="30" Grid.Row="0" Margin="20, 0" 
+                    <Button Width="60" Height="30" Grid.Row="0" Margin="20, 0" 
                         VerticalAlignment="Center" Content="계산" 
                         FontSize="18" Click="Calculate"/>
 
-                <Button Width="60" Height="30" Grid.Row="0" Margin="20, 0" 
+                    <Button Width="60" Height="30" Grid.Row="0" Margin="20, 0" 
                         VerticalAlignment="Center" Content="초기화" 
                         FontSize="18" Click="Clear"/>
+                </WrapPanel>
 
-                <TextBlock Width="40" Height="30" x:Name="result" FontSize="18" Text="0.00"></TextBlock>
-                <TextBlock Width="60" Height="30" Margin="20, 0" FontSize="18" Text="km/h"></TextBlock>
-            </WrapPanel>
 
-            <TextBlock Grid.Row="1" FontWeight="Bold" FontSize="18" x:Name="bmi">
-                나의 신체질량지수(BMI)
-            </TextBlock>
+                <WrapPanel>
+                    <TextBlock FontWeight="Bold" FontSize="18" Margin="0, 0, 20, 0">
+                        나의 신체질량지수(BMI)
+                    </TextBlock>
+                    <TextBlock FontWeight="Bold" FontSize="18" x:Name="bmi"></TextBlock>
+                </WrapPanel>
+            </StackPanel>
         </Grid>
     </Grid>
 </Window>
